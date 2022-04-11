@@ -1,0 +1,38 @@
+body{
+  background-color: gray;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+div{
+  background-color: orange;
+
+  padding: 20px;
+}
+
+h1 {
+  line-height: 2;
+  color: #66BFBF;
+  margin: 0;
+}
+
+h2 {
+  color: #66BFBF;
+  margin: 0;
+  font-weight: normal;
+}
+h3, a {
+  color: #11999E;
+}
+
+.yellow-container {
+  height: 150px;
+  width: 300px;
+  background-color: yellow;
+}
+
+.blue-container {
+  height: 150px;
+  width: 300px;
+  background-color: blue;
+}
