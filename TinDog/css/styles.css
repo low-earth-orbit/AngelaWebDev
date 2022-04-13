@@ -1,39 +1,47 @@
-#title {
-  background-color: #ff4c68;
-  color: white;
-}
-
-.container-fluid {
-  padding: 3% 15%;
-}
-
 body {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+  font-weight: 900;
 }
 
 p {
   color: #8f8f8f;
 }
 
-h1 {
+/* Headings */
+.big-heading {
   font-size: 3.5rem;
-  line-height: 1.5;
-  font-weight: 900;
 }
 
-h2 {
+.section-heading {
   font-size: 3rem;
-  line-height: 1.5;
-  font-weight: 900;
 }
 
-h3 {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  font-weight: 900;
+.container-fluid {
+  padding: 7% 15%;
 }
 
-/* navbar */
+/* Sections */
+.white-section {
+  background-color: white;
+}
+
+.coloured-section {
+  background-color: #ff4c68;
+  color: white;
+}
+
+/* Title section */
+#title .container-fluid {
+  padding: 3% 15% 7%;
+  text-align: left;
+}
+
+/* Title section - navbar */
 .navbar {
   padding: 0 0 4.5rem;
 }
@@ -52,25 +60,50 @@ h3 {
   font-size: 1.2rem;
 }
 
-/* Download bottons */
+/* Title section - download button */
 .download-botton {
   margin: 5% 3% 5% 0;
 }
 
-/* Title image */
+/* Title section - title iamge */
+.title-image-div {
+  position: relative;
+}
+
 .title-image {
-  transform: rotate(25deg);
   width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
+}
+
+/* Title section - responsive design media query */
+@media (max-width: 1200px) {
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 992px) {
+  #title {
+    text-align: center;
+  }
 }
 
 /* Features section */
 #features {
-  padding: 7% 15%;
+  position: relative;
 }
+
+.feature-text {
+  font-size: 1.5rem;
+}
+
 .feature-box {
-  text-align: center;
-  padding: 5%;
+  padding: 4.5%;
 }
+
 .icon {
   color: #ef8172;
   margin-bottom: 1rem;
@@ -80,25 +113,24 @@ h3 {
   color: #ff4c68;
 }
 
-/* Testimonials */
+/* Testimonials section */
 #testimonials {
-  text-align: center;
   background-color: #ef8172;
   color: white;
 }
 
-.carousel-item {
-  padding: 7% 15%;
+.testimonial-text {
+  font-size: 3rem;
 }
+
 .testimonial-image {
   width: 10%;
   border-radius: 100%;
   margin: 20px;
 }
 
-/* Press */
+/* Press section */
 #press {
-  text-align: center;
   padding-bottom: 3%;
   background-color: #ef8172;
 }
@@ -108,12 +140,25 @@ h3 {
   margin: 20px 20px 50px;
 }
 
-/* Pricing */
+/* Pricing section */
 #pricing {
   padding: 100px;
-  text-align: center;
 }
 
 .pricong-column {
   padding: 3% 2%;
+}
+
+.price-text {
+  font-size: 3rem;
+}
+
+/* CTA (call to action) section */
+/* Footer section */
+#footer {
+  background-color: white;
+}
+
+.social-icon {
+  margin: 20px 10px;
 }
