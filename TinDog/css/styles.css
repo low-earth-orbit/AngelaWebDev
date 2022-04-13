@@ -90,9 +90,6 @@ p {
     padding: 3% 15% 7%;
     text-align: center;
   }
-{
-    text-align: center;
-  }
 }
 
 /* Features section */
@@ -131,11 +128,6 @@ p {
   width: 10%;
   border-radius: 100%;
   margin: 20px;
-}
-
-.sr-only {
-  margin: 0;
-  height: 0;
 }
 
 /* Press section */
