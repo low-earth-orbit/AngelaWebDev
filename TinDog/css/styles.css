@@ -135,7 +135,9 @@ p {
 
 .sr-only {
   margin: 0;
+  height: 0;
 }
+
 /* Press section */
 #press {
   padding-bottom: 3%;
