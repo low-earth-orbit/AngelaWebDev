@@ -2,21 +2,25 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
 var userClickedPattern = [];
-
+var started = false;
 var level = 0;
-if (level === 0) {
+
+if (started === false) {
   $(document).keypress(function (){
+    started = true;
     $("h1").text("Level 0");
     nextSequence();
   });
 }
 
 $(".btn").click(function (){ // jQuery handlers are anonymous functions
-  var userChosenColour = $(this).attr('id'); // I used this.attr('id') ->WRONG
-  userClickedPattern.push(userChosenColour);
-  checkAnswer(userClickedPattern.length - 1);
-  playSound(userChosenColour);
-  animatePress(userChosenColour);
+  if (started === true) {
+    var userChosenColour = $(this).attr('id'); // I used this.attr('id') ->WRONG
+    userClickedPattern.push(userChosenColour);
+    checkAnswer(userClickedPattern.length - 1);
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
+  }
 });
 
 /*
@@ -39,18 +43,6 @@ function checkAnswer(index) {
   }
 }
 
-function nextSequence() {
-  userClickedPattern = []; // set userClickedPattern to empty
-  var randomNumber = Math.floor(Math.random()*4);
-  var randomChosenColour = buttonColours[randomNumber];
-  gamePattern.push(randomChosenColour);
-  $("#" + randomChosenColour).fadeOut().fadeIn();
-  playSound(randomChosenColour);
-  level ++;
-  $("h1").text("Level " + level);
-
-}
-
 function playSound(name){
   var sound = new Audio("sounds/"+ name +".mp3");
   sound.play();
@@ -63,7 +55,20 @@ function animatePress(currentColour){
   }, 100);
 }
 
+function nextSequence() {
+  userClickedPattern = []; // set userClickedPattern to empty
+  var randomNumber = Math.floor(Math.random()*4);
+  var randomChosenColour = buttonColours[randomNumber];
+  gamePattern.push(randomChosenColour);
+  $("#" + randomChosenColour).fadeOut().fadeIn();
+  playSound(randomChosenColour);
+  level ++;
+  $("h1").text("Level " + level);
+
+}
+
 function startOver (){
+  started = false;
   level = 0;
   gamePattern = [];
   userClickedPattern = []; // duplicated in nextSequence(); be here for safe
