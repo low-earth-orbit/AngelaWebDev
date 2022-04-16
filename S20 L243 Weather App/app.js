@@ -19,14 +19,15 @@ app.get("/", function(req, res){
 app.post('/', function (req, res) {
 
   // STEP 1: use geocoding api to retrieve latitude longitude
-  const city = req.body.cityName;
+  const query = req.body.cityName;
   const apiKey = "ed95ddb451bad7a5825d7fc028237fe8";
-  geocodingURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + apiKey;
+  geocodingURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + query + "&limit=1&appid=" + apiKey;
   https.get(geocodingURL, function(geoResponse){
     console.log("Geocoding API response: " + geoResponse.statusCode);
     geoResponse.on("data", function(dataG){
       const geoData = JSON.parse(dataG);
       console.log(geoData);
+      const city = geoData[0].name;
       const latitude = geoData[0].lat;
       const longitude = geoData[0].lon;
       const state = geoData[0].state;
