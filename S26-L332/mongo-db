@@ -1,0 +1,40 @@
+db.products.insertOne({
+    _id: 2,
+    name:"Pencil",
+    price:0.8,
+    stock:12,
+    review: [
+        {
+            authorName:"James",
+            rating:5,
+            review:"Fantastic!"
+        },
+        {
+            authorName:"Jono",
+            rating:5,
+            review:"The best pencil ever!"
+        }
+    ]
+}
+)
+
+db.products.insertOne({
+    _id: 3,
+    name:"Rubber",
+    price:1.3,
+    stock:43,
+    review: [
+        {
+            authorName:"Jay",
+            rating:5,
+            review:"Awesome rubber!"
+        }
+    ]
+}
+)
+
+db.orders.insertOne({
+    orderNumber: 3243,
+    productsOrdered: [1,2]
+}
+)
