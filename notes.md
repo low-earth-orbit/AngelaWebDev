@@ -4,6 +4,9 @@ No flexbox and grid. Learn from freeCodeCamp.
 # JavaScript 
 Objects & callbacks: 163, 166, 168, 171
 
+# Node
+Port 3000 is in use: https://stackoverflow.com/questions/4075287/node-express-eaddrinuse-address-already-in-use-kill-server
+
 # MongoDB
 Installation: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/ 
 
